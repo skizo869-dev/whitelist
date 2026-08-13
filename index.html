@@ -1,117 +1,114 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Whitelist Application - Roleplay</title>
+    <title>Dream City - Whitelist Application</title>
     <style>
         body {
-            background-color: #0b0f17;
+            background-color: #050505;
             color: #ffffff;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .welcome-text {
+            color: #ff0000;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0000;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .logo-container img {
+            max-width: 260px;
+            height: auto;
         }
         .container {
             width: 100%;
-            max-width: 700px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .header h1 {
-            font-size: 28px;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            color: #fff;
-        }
-        .header p {
-            color: #8b949e;
-            font-size: 14px;
-        }
-        .form-group {
-            margin-bottom: 25px;
+            max-width: 600px;
+            background-color: #101010;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #330000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            box-sizing: border-box;
         }
         label {
             display: block;
             font-size: 13px;
             font-weight: bold;
-            color: #58a6ff;
+            color: #ff3333;
             margin-bottom: 8px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
         input, textarea {
             width: 100%;
-            background-color: #121824;
-            border: 1px solid #212c42;
-            padding: 14px;
+            background-color: #000000;
+            border: 1px solid #440000;
+            padding: 12px;
             color: #fff;
-            border-radius: 4px;
+            border-radius: 5px;
+            margin-bottom: 20px;
             box-sizing: border-box;
             font-size: 14px;
         }
         input:focus, textarea:focus {
-            border-color: #58a6ff;
+            border-color: #ff0000;
             outline: none;
-            background-color: #161f30;
-        }
-        input::placeholder, textarea::placeholder {
-            color: #48576e;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
         }
         button {
             width: 100%;
-            background-color: #1f6feb;
+            background-color: #990000;
             color: white;
             padding: 15px;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 5px;
             font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s;
+            transition: 0.3s;
+            letter-spacing: 1px;
         }
         button:hover {
-            background-color: #388bfd;
+            background-color: #ff0000;
+            box-shadow: 0 0 15px #ff0000;
         }
     </style>
 </head>
 <body>
 
+    <div class="welcome-text">WELCOME TO DREAM CITY</div>
+
+    <div class="logo-container">
+        <!-- حط هنا رابط اللوغو المباشر متاعك -->
+        <img src="رابط_اللوغو_متاعك_هنا.png" alt="Dream City Logo">
+    </div>
+
     <div class="container">
-        <div class="header">
-            <h1>WHITELIST (CITIZEN) APPLICATION</h1>
-            <p>SUBMIT YOUR CITIZENSHIP REQUEST TO GET WHITELISTED ON THE SERVER</p>
-        </div>
-        
         <form action="https://formspree.io/f/xnpavbaj" method="POST">
             
-            <div class="form-group">
-                <label>NAME (IRL) *</label>
-                <input type="text" name="name_irl" placeholder="Your real first name" required>
-            </div>
+            <label>REAL NAME (IRL)</label>
+            <input type="text" name="name_irl" placeholder="Enter your real name" required>
 
-            <div class="form-group">
-                <label>NAME (IN-GAME) *</label>
-                <input type="text" name="name_ingame" placeholder="First & Last character name" required>
-            </div>
+            <label>CHARACTER NAME (IN-GAME)</label>
+            <input type="text" name="name_ingame" placeholder="First and Last name" required>
 
-            <div class="form-group">
-                <label>DISCORD ID *</label>
-                <input type="text" name="discord" placeholder="Your discord username" required>
-            </div>
+            <label>DISCORD ID</label>
+            <input type="text" name="discord" placeholder="username#0000" required>
 
-            <div class="form-group">
-                <label>CHARACTER BACKSTORY *</label>
-                <textarea name="backstory" rows="5" placeholder="Tell us your Character Backstory..." required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>CHARACTER OBJECTIVE *</label>
-                <textarea name="objective" rows="3" placeholder="What is your character's objective?" required></textarea>
-            </div>
+            <label>CHARACTER BACKSTORY</label>
+            <textarea name="backstory" rows="5" placeholder="Tell us about your character..." required></textarea>
 
             <button type="submit">SUBMIT APPLICATION</button>
         </form>
