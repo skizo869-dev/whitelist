@@ -2,25 +2,120 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>تسجيل الوايت ليست</title>
+    <title>Whitelist Application - Roleplay</title>
+    <style>
+        body {
+            background-color: #0b0f17;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 700px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .header p {
+            color: #8b949e;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            color: #58a6ff;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        input, textarea {
+            width: 100%;
+            background-color: #121824;
+            border: 1px solid #212c42;
+            padding: 14px;
+            color: #fff;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input:focus, textarea:focus {
+            border-color: #58a6ff;
+            outline: none;
+            background-color: #161f30;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #48576e;
+        }
+        button {
+            width: 100%;
+            background-color: #1f6feb;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #388bfd;
+        }
+    </style>
 </head>
 <body>
 
-    <h2>تقديم طلب وايت ليست للسيرفر</h2>
-    
-    <form action="https://formspree.io/f/xnpavbaj" method="POST">
-        <label>
-            البريد الإلكتروني:
-            <input type="email" name="email" required>
-        </label>
-        <br><br>
-        <label>
-            الرسالة أو سبب الانضمام:
-            <textarea name="message" rows="4" required></textarea>
-        </label>
-        <br><br>
-        <button type="submit">إرسال الطلب</button>
-    </form>
+    <div class="container">
+        <div class="header">
+            <h1>WHITELIST (CITIZEN) APPLICATION</h1>
+            <p>SUBMIT YOUR CITIZENSHIP REQUEST TO GET WHITELISTED ON THE SERVER</p>
+        </div>
+        
+        <form action="https://formspree.io/f/xnpavbaj" method="POST">
+            
+            <div class="form-group">
+                <label>NAME (IRL) *</label>
+                <input type="text" name="name_irl" placeholder="Your real first name" required>
+            </div>
+
+            <div class="form-group">
+                <label>NAME (IN-GAME) *</label>
+                <input type="text" name="name_ingame" placeholder="First & Last character name" required>
+            </div>
+
+            <div class="form-group">
+                <label>DISCORD ID *</label>
+                <input type="text" name="discord" placeholder="Your discord username" required>
+            </div>
+
+            <div class="form-group">
+                <label>CHARACTER BACKSTORY *</label>
+                <textarea name="backstory" rows="5" placeholder="Tell us your Character Backstory..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>CHARACTER OBJECTIVE *</label>
+                <textarea name="objective" rows="3" placeholder="What is your character's objective?" required></textarea>
+            </div>
+
+            <button type="submit">SUBMIT APPLICATION</button>
+        </form>
+    </div>
 
 </body>
 </html>
