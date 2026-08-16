@@ -33,8 +33,7 @@
             background-position: center;
             background-repeat: no-repeat;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            padding-bottom: 60px;
             overflow-x: hidden;
         }
 
@@ -42,28 +41,21 @@
         .navbar {
             background-color: rgba(11, 13, 16, 0.95);
             border-bottom: 1px solid var(--border-color);
-            padding: 15px 30px;
+            padding: 15px 40px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            width: 100%;
+            gap: 30px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
-        .nav-brand {
-            font-weight: 900;
-            font-size: 18px;
-            letter-spacing: 1px;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
+        .nav-logo {
+            height: 45px;
+            margin: 0 15px;
+            object-fit: contain;
         }
 
         .navbar a {
@@ -72,24 +64,38 @@
             font-weight: 600;
             font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             transition: color 0.3s ease;
+            position: relative;
         }
 
-        .navbar a:hover, .navbar a.active {
+        .navbar a:hover {
             color: var(--text-main);
+        }
+
+        .navbar a.active {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .navbar a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-red);
         }
 
         /* --- Main Header --- */
         .main-header {
             text-align: center;
-            padding: 40px 20px 20px;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 50px 20px 30px;
         }
 
         .main-header h1 {
-            font-size: 38px;
+            font-size: 42px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -104,28 +110,27 @@
         .main-header p {
             color: var(--text-muted);
             font-size: 13px;
-            letter-spacing: 1px;
+            max-width: 600px;
+            margin: 0 auto;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
         /* --- Cards Container --- */
         .cards-container {
-            max-width: 1200px;
-            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            padding: 20px;
-            flex-grow: 1;
-            align-content: center;
+            padding: 0 20px;
         }
 
         .app-card {
-            background: linear-gradient(135deg, rgba(17, 19, 22, 0.95), rgba(11, 13, 16, 0.98));
+            background: linear-gradient(135deg, rgba(17, 19, 22, 0.9), rgba(11, 13, 16, 0.95));
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 30px 20px;
+            padding: 35px 25px;
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.3s ease;
@@ -134,61 +139,80 @@
             align-items: center;
             text-align: center;
             position: relative;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
         .app-card:hover {
             transform: translateY(-4px);
-            border-color: var(--accent-red);
-            box-shadow: 0 10px 25px rgba(231, 29, 54, 0.2);
+            border-color: #30363d;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .app-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-red);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .app-card:hover::after {
+            transform: scaleX(1);
         }
 
         .app-card h3 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 8px;
         }
 
         .app-card p {
             color: var(--text-muted);
-            font-size: 12px;
-            line-height: 1.4;
+            font-size: 13px;
         }
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
             .navbar {
-                padding: 12px 15px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .nav-links {
+                padding: 15px 10px;
                 gap: 15px;
+                flex-wrap: wrap;
+            }
+            .nav-logo {
+                height: 35px;
+                order: -1;
+                width: 100%;
+            }
+            .navbar a {
+                font-size: 11px;
+                letter-spacing: 1px;
             }
             .main-header h1 {
-                font-size: 26px;
+                font-size: 28px;
             }
             .cards-container {
                 grid-template-columns: 1fr;
-                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar (With Logo) -->
     <nav class="navbar">
-        <a href="#" class="nav-brand">BLACKOUT CITY</a>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">Rules</a>
-            <a href="#" class="active">Applications</a>
-            <a href="#">Team</a>
-        </div>
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <img src="https://i.imgur.com/rX97K2X.png" alt="Blackout City Logo" class="nav-logo">
+        <a href="#">Rules</a>
+        <a href="#" class="active">Applications</a>
+        <a href="#">Team</a>
     </nav>
 
     <!-- Main Header Section -->
@@ -197,11 +221,11 @@
         <p>Select a department to submit your official application directly to the staff team</p>
     </header>
 
-    <!-- Applications Cards Grid -->
+    <!-- Applications Cards Grid (4 Cards in 2x2 Layout) -->
     <div class="cards-container">
         <a href="whitelist.html" class="app-card">
             <h3>Whitelist (Citizen)</h3>
-            <p>Become an official citizen of Blackout City.</p>
+            <p>Apply to become an official citizen of Blackout City.</p>
         </a>
 
         <a href="police.html" class="app-card">
