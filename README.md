@@ -209,6 +209,7 @@
     <nav class="navbar">
         <a href="#">Home</a>
         <a href="#">Events</a>
+        <!-- Integrated Logo in Navbar -->
         <img src="https://i.imgur.com/rX97K2X.png" alt="Blackout City Logo" class="nav-logo">
         <a href="#">Rules</a>
         <a href="#" class="active">Applications</a>
