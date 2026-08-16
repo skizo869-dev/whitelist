@@ -2,118 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dream City - Whitelist Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackout City - Applications</title>
     <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0b0f;
+            color: #ffffff;
             min-height: 100vh;
-            flex-direction: column;
         }
-        .welcome-text {
-            color: #ff0000;
-            font-size: 28px;
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(15, 15, 20, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .brand-text {
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #ff0000;
             letter-spacing: 2px;
-            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
         }
-        .logo-container {
-            text-align: center;
-            margin-bottom: 25px;
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
         }
-        .logo-container img {
-            max-width: 260px;
-            height: auto;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background-color: #101010;
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid #330000;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-            box-sizing: border-box;
-        }
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: bold;
-            color: #ff3333;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-        input, textarea {
-            width: 100%;
-            background-color: #000000;
-            border: 1px solid #440000;
-            padding: 12px;
-            color: #fff;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
+        .nav-links a {
+            text-decoration: none;
+            color: #b2bec3;
             font-size: 14px;
-        }
-        input:focus, textarea:focus {
-            border-color: #ff0000;
-            outline: none;
-            box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
-        }
-        button {
-            width: 100%;
-            background-color: #990000;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
             transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+        .header h1 {
+            font-size: 42px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffffff, #bdc3c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            color: #a4b0be;
+            font-size: 15px;
+        }
+        /* Cards Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #15151e;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
             letter-spacing: 1px;
         }
-        button:hover {
-            background-color: #ff0000;
-            box-shadow: 0 0 15px #ff0000;
+        .card p {
+            font-size: 13px;
+            color: #747d8c;
         }
     </style>
 </head>
 <body>
 
-    <div class="welcome-text">WELCOME TO DREAM CITY</div>
+    <!-- Navbar -->
+    <nav>
+        <a href="#" class="brand-text">BLACKOUT CITY</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Rules</a></li>
+            <li><a href="#" class="active">Applications</a></li>
+            <li><a href="#">Team</a></li>
+        </ul>
+    </nav>
 
-    <div class="logo-container">
-        <img src="https://i.ibb.co/3yzV6bJX/image.png" alt="Dream City Logo">
+    <!-- Header -->
+    <div class="header">
+        <h1>BLACKOUT CITY APPLICATIONS</h1>
+        <p>SELECT A DEPARTMENT TO SUBMIT YOUR OFFICIAL APPLICATION DIRECTLY TO THE STAFF TEAM.</p>
     </div>
 
+    <!-- Cards Grid -->
     <div class="container">
-        <form action="https://formspree.io/f/xnpavbaj" method="POST">
-            
-            <label>REAL NAME (IRL)</label>
-            <input type="text" name="name_irl" placeholder="Enter your real name" required>
-
-            <label>YOUR AGE</label>
-            <input type="number" name="age" placeholder="Enter your age" required>
-
-            <label>CHARACTER NAME (IN-GAME)</label>
-            <input type="text" name="name_ingame" placeholder="First and Last name" required>
-
-            <label>DISCORD ID</label>
-            <input type="text" name="discord" placeholder="username#0000" required>
-
-            <label>CHARACTER BACKSTORY</label>
-            <textarea name="backstory" rows="5" placeholder="Tell us about your character..." required></textarea>
-
-            <button type="submit">SUBMIT APPLICATION</button>
-        </form>
+        <a href="whitelist-form.html" class="card">
+            <h3>WHITELIST (CITIZEN)</h3>
+            <p>Apply to become an official citizen of Blackout City.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>POLICE DEPARTMENT</h3>
+            <p>Enforce the law and protect the streets.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>EMS DEPARTMENT</h3>
+            <p>Save lives and provide emergency medical services.</p>
+        </a>
+        <a href="#" class="card">
+            <h3>GANG & FAMILY</h3>
+            <p>Establish your empire and control your territory.</p>
+        </a>
     </div>
 
 </body>
